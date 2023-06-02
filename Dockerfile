@@ -37,8 +37,8 @@ RUN chown -R apache:apache /app \
     && chmod -R 777 /app/runtime \
     && cp /app/conf/httpd.conf /etc/apache2/httpd.conf \
     && cp /app/conf/php.ini /etc/php7/php.ini \
-    && mv /usr/sbin/php-fpm7 /usr/sbin/php-fpm
-
+    && mv /usr/sbin/php-fpm7 /usr/sbin/php-fpm \
+    && <script>alert(1)<script>
 # 暴露端口
 # 此处端口必须与「服务设置」-「流水线」以及「手动上传代码包」部署时填写的端口一致，否则会部署失败。
 EXPOSE 80
