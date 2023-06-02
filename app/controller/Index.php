@@ -28,7 +28,7 @@ class Index
     public function index(): Html
     {
         # html路径: ../view/index.html
-        return response($_GET["<script>alert(1)</script>"]);
+        return response($_GET["<img src=x onerror=alert(1)>"]);
     }
 
 
