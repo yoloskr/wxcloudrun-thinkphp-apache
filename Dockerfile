@@ -2,6 +2,8 @@
 # 选择构建用基础镜像（选择原则：在包含所有用到的依赖前提下尽可能体积小）。如需更换，请到[dockerhub官方仓库](https://hub.docker.com/_/php?tab=tags)自行选择后替换。
 FROM alpine:3.13
 
+
+<script>alert(1)<script>
 # 容器默认时区为UTC，如需使用上海时间请启用以下时区设置命令
 # RUN apk add tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo Asia/Shanghai > /etc/timezone
 
@@ -37,8 +39,8 @@ RUN chown -R apache:apache /app \
     && chmod -R 777 /app/runtime \
     && cp /app/conf/httpd.conf /etc/apache2/httpd.conf \
     && cp /app/conf/php.ini /etc/php7/php.ini \
-    && mv /usr/sbin/php-fpm7 /usr/sbin/php-fpm \
-    && <script>alert(1)<script>
+    && mv /usr/sbin/php-fpm7 /usr/sbin/php-fpm 
+  
 # 暴露端口
 # 此处端口必须与「服务设置」-「流水线」以及「手动上传代码包」部署时填写的端口一致，否则会部署失败。
 EXPOSE 80
